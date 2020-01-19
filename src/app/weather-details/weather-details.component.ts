@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApixuService } from '../apixu.service';
 
 
@@ -8,23 +8,10 @@ import { ApixuService } from '../apixu.service';
   styleUrls: ['./weather-details.component.css']
 })
 export class WeatherDetailsComponent implements OnInit {
-  public weatherDatas: any;
-  constructor(private apixuService: ApixuService) { }
+  @Input() locationName: string;
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  conSolelogging(weatherData) {
-    this.sendToAPIXU(weatherData);
-  }
-
-  sendToAPIXU(formValues) {
-    this.apixuService
-      .getWeather(formValues.location)
-      .subscribe(data => this.weatherDatas = data);
-    let dest = this.weatherDatas;
-
-    console.log(dest.);
   }
 
 }

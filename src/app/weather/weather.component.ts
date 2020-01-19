@@ -23,9 +23,5 @@ export class WeatherComponent implements OnInit {
     this.apixuService
       .getWeather(formValues.location)
       .subscribe(data => this.weatherData = data);
-
-    if (this.weatherData !== undefined) {
-      console.log(this.weatherData);
-    }
   }
 }
